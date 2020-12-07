@@ -32,7 +32,6 @@ import java.sql.SQLException;
 @EntityScan(basePackages = "org.apache.shardingsphere.example.core.jpa.entity")
 @SpringBootApplication(exclude = JtaAutoConfiguration.class)
 public class ExampleMain {
-
     public static void main(final String[] args) throws SQLException {
         try (ConfigurableApplicationContext applicationContext = SpringApplication.run(ExampleMain.class, args)) {
             ExampleExecuteTemplate.run(applicationContext.getBean(ExampleService.class));

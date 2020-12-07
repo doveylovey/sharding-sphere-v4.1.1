@@ -32,13 +32,12 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
-/*
+/**
  * 1. Please make sure master-slave data sync on MySQL is running correctly. Otherwise this example will query empty data from slave.
  * 2. Please make sure sharding-orchestration-center-zookeeper-curator in your pom if registryCenterType = RegistryCenterType.ZOOKEEPER.
  * 3. Please make sure sharding-orchestration-center-nacos in your pom if registryCenterType = RegistryCenterType.NACOS.
  */
 public class YamlConfigurationExampleMain {
-
     private static ShardingType shardingType = ShardingType.SHARDING_DATABASES_AND_TABLES;
 //    private static ShardingType shardingType = ShardingType.MASTER_SLAVE;
 //    private static ShardingType shardingType = ShardingType.ENCRYPT;
@@ -88,5 +87,4 @@ public class YamlConfigurationExampleMain {
             ((AbstractDataSourceAdapter) dataSource).close();
         }
     }
-
 }

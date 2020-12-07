@@ -43,7 +43,7 @@ public class LocalEncryptConfiguration implements ExampleConfiguration {
 
     @Override
     public DataSource getDataSource() throws SQLException {
-        return OrchestrationEncryptDataSourceFactory.createDataSource(DataSourceUtil.createDataSource("demo_ds"), getEncryptRuleConfiguration(), new Properties(), getOrchestrationConfiguration());
+        return OrchestrationEncryptDataSourceFactory.createDataSource(DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds"), getEncryptRuleConfiguration(), new Properties(), getOrchestrationConfiguration());
     }
 
     private OrchestrationConfiguration getOrchestrationConfiguration() {

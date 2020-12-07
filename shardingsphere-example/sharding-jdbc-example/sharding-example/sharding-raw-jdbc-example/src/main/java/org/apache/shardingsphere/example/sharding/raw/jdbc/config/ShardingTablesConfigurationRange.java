@@ -49,7 +49,7 @@ public final class ShardingTablesConfigurationRange implements ExampleConfigurat
 
     private static Map<String, DataSource> createDataSourceMap() {
         Map<String, DataSource> result = new HashMap<>();
-        result.put("demo_ds", DataSourceUtil.createDataSource("demo_ds"));
+        result.put("demo_ds", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD,"demo_ds"));
         return result;
     }
 

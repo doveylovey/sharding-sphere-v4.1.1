@@ -37,7 +37,7 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Map;
 
-/*
+/**
  * 1. Please make sure master-slave data sync on MySQL is running correctly. Otherwise this example will query empty data from slave.
  * 2. Please make sure sharding-orchestration-center-zookeeper-curator in your pom if registryCenterType = RegistryCenterType.ZOOKEEPER.
  * 3. Please make sure sharding-orchestration-center-nacos in your pom if registryCenterType = RegistryCenterType.NACOS.
@@ -68,8 +68,7 @@ public class JavaConfigurationExampleMain {
         ExampleConfiguration configuration;
         switch (shardingType) {
             case SHARDING_DATABASES_AND_TABLES:
-                configuration = loadConfigFromRegCenter
-                        ? new CloudShardingDatabasesAndTablesConfiguration(centerConfigurationMap) : new LocalShardingDatabasesAndTablesConfiguration(centerConfigurationMap);
+                configuration = loadConfigFromRegCenter ? new CloudShardingDatabasesAndTablesConfiguration(centerConfigurationMap) : new LocalShardingDatabasesAndTablesConfiguration(centerConfigurationMap);
                 break;
             case MASTER_SLAVE:
                 configuration = loadConfigFromRegCenter ? new CloudMasterSlaveConfiguration(centerConfigurationMap) : new LocalMasterSlaveConfiguration(centerConfigurationMap);
@@ -84,8 +83,9 @@ public class JavaConfigurationExampleMain {
     }
 
     private static Map<String, CenterConfiguration> getRegistryCenterConfiguration(final RegistryCenterType registryCenterType, ShardingType shardingType) {
-        return RegistryCenterType.ZOOKEEPER == registryCenterType ? RegistryCenterConfigurationUtil.getZooKeeperConfiguration(String.valueOf(!loadConfigFromRegCenter), shardingType) :
-                RegistryCenterConfigurationUtil.getNacosConfiguration(String.valueOf(!loadConfigFromRegCenter), shardingType);
+        return RegistryCenterType.ZOOKEEPER == registryCenterType
+                ? RegistryCenterConfigurationUtil.getZooKeeperConfiguration(String.valueOf(!loadConfigFromRegCenter), shardingType)
+                : RegistryCenterConfigurationUtil.getNacosConfiguration(String.valueOf(!loadConfigFromRegCenter), shardingType);
     }
 
     private static ExampleService getExampleService(final DataSource dataSource) {

@@ -27,7 +27,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 public class YamlDataSourceFactory {
-
     public static DataSource newInstance(final ShardingType shardingType) throws SQLException, IOException {
         switch (shardingType) {
             case SHARDING_DATABASES:

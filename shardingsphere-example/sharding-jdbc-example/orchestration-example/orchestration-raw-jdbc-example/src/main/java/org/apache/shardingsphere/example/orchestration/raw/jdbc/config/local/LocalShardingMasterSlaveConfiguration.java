@@ -81,12 +81,12 @@ public final class LocalShardingMasterSlaveConfiguration implements ExampleConfi
 
     private Map<String, DataSource> createDataSourceMap() {
         final Map<String, DataSource> result = new HashMap<>();
-        result.put("demo_ds_master_0", DataSourceUtil.createDataSource("demo_ds_master_0"));
-        result.put("demo_ds_master_0_slave_0", DataSourceUtil.createDataSource("demo_ds_master_0_slave_0"));
-        result.put("demo_ds_master_0_slave_1", DataSourceUtil.createDataSource("demo_ds_master_0_slave_1"));
-        result.put("demo_ds_master_1", DataSourceUtil.createDataSource("demo_ds_master_1"));
-        result.put("demo_ds_master_1_slave_0", DataSourceUtil.createDataSource("demo_ds_master_1_slave_0"));
-        result.put("demo_ds_master_1_slave_1", DataSourceUtil.createDataSource("demo_ds_master_1_slave_1"));
+        result.put("demo_ds_master_0", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds_master_0"));
+        result.put("demo_ds_master_0_slave_0", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds_master_0_slave_0"));
+        result.put("demo_ds_master_0_slave_1", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds_master_0_slave_1"));
+        result.put("demo_ds_master_1", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds_master_1"));
+        result.put("demo_ds_master_1_slave_0", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds_master_1_slave_0"));
+        result.put("demo_ds_master_1_slave_1", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds_master_1_slave_1"));
         return result;
     }
 }

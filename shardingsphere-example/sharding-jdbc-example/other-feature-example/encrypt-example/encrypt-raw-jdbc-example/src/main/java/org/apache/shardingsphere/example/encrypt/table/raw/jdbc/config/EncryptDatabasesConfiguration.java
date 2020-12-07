@@ -53,7 +53,7 @@ public class EncryptDatabasesConfiguration implements ExampleConfiguration {
         tableConfig.getColumns().putAll(columns);
         encryptRuleConfiguration.getEncryptors().put("pwd_encryptor", testRuleConfiguration);
         try {
-            return EncryptDataSourceFactory.createDataSource(DataSourceUtil.createDataSource("demo_ds"), encryptRuleConfiguration, properties);
+            return EncryptDataSourceFactory.createDataSource(DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD,"demo_ds"), encryptRuleConfiguration, properties);
         } catch (final SQLException ex) {
             ex.printStackTrace();
             return null;

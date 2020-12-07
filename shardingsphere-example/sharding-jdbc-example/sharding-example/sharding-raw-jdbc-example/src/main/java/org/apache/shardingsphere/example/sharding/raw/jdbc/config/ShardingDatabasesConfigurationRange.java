@@ -49,8 +49,8 @@ public final class ShardingDatabasesConfigurationRange implements ExampleConfigu
 
     private static Map<String, DataSource> createDataSourceMap() {
         Map<String, DataSource> result = new HashMap<>();
-        result.put("demo_ds_0", DataSourceUtil.createDataSource("demo_ds_0"));
-        result.put("demo_ds_1", DataSourceUtil.createDataSource("demo_ds_1"));
+        result.put("demo_ds_0", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds_0"));
+        result.put("demo_ds_1", DataSourceUtil.createDataSource(DataSourceUtil.DEFAULT_HOST, DataSourceUtil.DEFAULT_PORT, DataSourceUtil.DEFAULT_USERNAME, DataSourceUtil.DEFAULT_PASSWORD, "demo_ds_1"));
         return result;
     }
 
