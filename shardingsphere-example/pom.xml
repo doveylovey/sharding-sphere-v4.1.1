@@ -16,13 +16,14 @@
   ~ limitations under the License.
   -->
 
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.apache.shardingsphere.example</groupId>
     <artifactId>shardingsphere-example</artifactId>
     <version>4.1.1</version>
+    <name>Example::root</name>
+    <packaging>pom</packaging>
 
     <modules>
         <module>example-core</module>
@@ -30,17 +31,13 @@
         <module>sharding-proxy-example</module>
     </modules>
 
-    <name>Example::root</name>
-
-    <packaging>pom</packaging>
-
     <properties>
         <java.version>1.8</java.version>
         <maven.version.range>[3.0.4,)</maven.version.range>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.build.locale>zh_CN</project.build.locale>
 
-        <shardingsphere.version>5.0.0-RC1-SNAPSHOT</shardingsphere.version>
+        <shardingsphere.version>4.1.1</shardingsphere.version>
 
         <aspectjweaver.version>1.8.9</aspectjweaver.version>
         <spring-framework.version>4.3.20.RELEASE</spring-framework.version>
